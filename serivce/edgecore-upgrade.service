@@ -1,15 +1,11 @@
 [Unit]
 Description=edgecore-upgrade.service
-StartLimitInterval=100
-StartLimitBurst=3
 
 [Service]
-Type=forking
+Type=simple
 ExecStart=/bin/bash /etc/kubeedge/upgrade/start.sh
 ExecStop=/bin/bash /etc/kubeedge/upgrade/stop.sh
-RestartSec=10
-TimeoutSec=20
-Restart=always
+Restart=no
 
 [Install]
 WantedBy=multi-user.target

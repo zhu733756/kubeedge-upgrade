@@ -1,34 +1,34 @@
-I0327 15:00:54.762946   31188 server.go:76] Version: v1.10.0
-I0327 15:00:54.764778   31188 server.go:103] Use node IP address from config: 1.1.1.1
-I0327 15:00:54.764815   31188 sql.go:21] Begin to register twin db model
-I0327 15:00:54.764932   31188 module.go:52] Module twin registered successfully
-I0327 15:00:54.771004   31188 client.go:78] "Connecting to docker on the dockerEndpoint" endpoint="unix:///var/run/docker.sock"
-I0327 15:00:54.771035   31188 client.go:97] "Start docker client with request timeout" timeout="0s"
-I0327 15:00:54.779687   31188 docker_service.go:242] "Hairpin mode is set" hairpinMode=hairpin-veth
-I0327 15:00:54.779822   31188 cni.go:239] "Unable to update cni config" err="no networks found in /etc/cni/net.d"
-I0327 15:00:54.785244   31188 hostport_manager.go:72] "The binary conntrack is not installed, this can cause failures in network connection cleanup."
-I0327 15:00:54.785265   31188 hostport_manager.go:72] "The binary conntrack is not installed, this can cause failures in network connection cleanup."
-I0327 15:00:54.786023   31188 docker_service.go:257] "Docker cri networking managed by the network plugin" networkPluginName="kubernetes.io/no-op"
-I0327 15:00:54.797003   31188 docker_service.go:263] "Docker Info" dockerInfo=&{ID:JY2E:DPKB:MB63:ZQLB:3HGX:C5OU:4OWJ:R4AI:CQEK:YM7P:DP7P:3J7V Containers:1 ContainersRunning:0 ContainersPaused:0 ContainersStopped:1 Images:24 Driver:overlay2 DriverStatus:[[Backing Filesystem extfs] [Supports d_type true] [Native Overlay Diff true] [userxattr false]] SystemStatus:[] Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:[] Log:[awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog]} MemoryLimit:true SwapLimit:false KernelMemory:true KernelMemoryTCP:true CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6tables:true Debug:false NFd:22 OomKillDisable:true NGoroutines:33 SystemTime:2022-03-27T15:00:54.78654322+08:00 LoggingDriver:json-file CgroupDriver:cgroupfs CgroupVersion:1 NEventsListener:0 KernelVersion:4.15.0-121-generic OperatingSystem:Ubuntu 18.04.5 LTS OSVersion:18.04 OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:0xc000292070 NCPU:2 MemTotal:4136067072 GenericResources:[] DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:ke1 Labels:[] ExperimentalBuild:false ServerVersion:20.10.7 ClusterStore: ClusterAdvertise: Runtimes:map[io.containerd.runc.v2:{Path:runc Args:[] Shim:<nil>} io.containerd.runtime.v1.linux:{Path:runc Args:[] Shim:<nil>} runc:{Path:runc Args:[] Shim:<nil>}] DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:[] Nodes:0 Managers:0 Cluster:<nil> Warnings:[]} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:d71fcd7d8303cbf684402823e425e9dd2e99285d Expected:d71fcd7d8303cbf684402823e425e9dd2e99285d} RuncCommit:{ID:b9ee9c6314599f1b4a7f497e1f1f856fe433d3b7 Expected:b9ee9c6314599f1b4a7f497e1f1f856fe433d3b7} InitCommit:{ID:de40ad0 Expected:de40ad0} SecurityOptions:[name=apparmor name=seccomp,profile=default] ProductLicense: DefaultAddressPools:[] Warnings:[WARNING: No swap limit support]}
-I0327 15:00:54.797025   31188 docker_service.go:278] "Setting cgroupDriver" cgroupDriver="cgroupfs"
-I0327 15:00:54.797089   31188 edged.go:705] RemoteRuntimeEndpoint: "unix:///var/run/dockershim.sock", remoteImageEndpoint: "unix:///var/run/dockershim.sock"
-I0327 15:00:54.797096   31188 edged.go:708] Starting the GRPC server for the docker CRI shim.
-I0327 15:00:54.812103   31188 state_mem.go:36] "Initialized new in-memory state store"
-I0327 15:00:54.878454   31188 kuberuntime_manager.go:245] "Container runtime initialized" containerRuntime="docker" version="20.10.7" apiVersion="1.41.0"
-I0327 15:00:54.878509   31188 edged.go:589] --cgroups-per-qos enabled, but --cgroup-root was not specified.  defaulting to /
-I0327 15:00:54.886789   31188 container_manager_linux.go:280] "Container manager verified user specified cgroup-root exists" cgroupRoot=[]
-I0327 15:00:54.886891   31188 container_manager_linux.go:285] "Creating Container Manager object based on Node Config" nodeConfig={RuntimeCgroupsName: SystemCgroupsName: KubeletCgroupsName: ContainerRuntime:docker CgroupsPerQOS:true CgroupRoot:/ CgroupDriver:cgroupfs KubeletRootDir:/var/lib/edged ProtectKernelDefaults:false NodeAllocatableConfig:{KubeReservedCgroupName: SystemReservedCgroupName: ReservedSystemCPUs: EnforceNodeAllocatable:map[] KubeReserved:map[] SystemReserved:map[] HardEvictionThresholds:[]} QOSReserved:map[] ExperimentalCPUManagerPolicy:none ExperimentalCPUManagerPolicyOptions:map[] ExperimentalTopologyManagerScope:container ExperimentalCPUManagerReconcilePeriod:0s ExperimentalMemoryManagerPolicy:None ExperimentalMemoryManagerReservedMemory:[] ExperimentalPodPidsLimit:0 EnforceCPULimits:false CPUCFSQuotaPeriod:0s ExperimentalTopologyManagerPolicy:none}
-I0327 15:00:54.886912   31188 topology_manager.go:133] "Creating topology manager with policy per scope" topologyPolicyName="none" topologyScopeName="container"
-I0327 15:00:54.886922   31188 container_manager_linux.go:320] "Creating device plugin manager" devicePluginEnabled=false
-I0327 15:00:54.886933   31188 state_mem.go:36] "Initialized new in-memory state store"
-I0327 15:00:54.886996   31188 module.go:52] Module edged registered successfully
-I0327 15:00:54.887003   31188 module.go:52] Module websocket registered successfully
-I0327 15:00:54.887008   31188 module.go:52] Module eventbus registered successfully
-I0327 15:00:54.887034   31188 metamanager.go:47] Begin to register metaManager db model
-I0327 15:00:54.887075   31188 module.go:52] Module metaManager registered successfully
-W0327 15:00:54.887080   31188 module.go:55] Module servicebus is disabled, do not register
-W0327 15:00:54.887092   31188 module.go:55] Module edgestream is disabled, do not register
-W0327 15:00:54.887096   31188 module.go:55] Module testManager is disabled, do not register
+I0328 22:38:37.503054   29191 server.go:76] Version: v1.10.0
+I0328 22:38:37.504986   29191 server.go:103] Use node IP address from config: 1.1.1.1
+I0328 22:38:37.505013   29191 sql.go:21] Begin to register twin db model
+I0328 22:38:37.505129   29191 module.go:52] Module twin registered successfully
+I0328 22:38:37.513371   29191 client.go:78] "Connecting to docker on the dockerEndpoint" endpoint="unix:///var/run/docker.sock"
+I0328 22:38:37.513395   29191 client.go:97] "Start docker client with request timeout" timeout="0s"
+I0328 22:38:37.521758   29191 docker_service.go:242] "Hairpin mode is set" hairpinMode=hairpin-veth
+I0328 22:38:37.521851   29191 cni.go:239] "Unable to update cni config" err="no networks found in /etc/cni/net.d"
+I0328 22:38:37.524348   29191 hostport_manager.go:72] "The binary conntrack is not installed, this can cause failures in network connection cleanup."
+I0328 22:38:37.524368   29191 hostport_manager.go:72] "The binary conntrack is not installed, this can cause failures in network connection cleanup."
+I0328 22:38:37.525254   29191 docker_service.go:257] "Docker cri networking managed by the network plugin" networkPluginName="kubernetes.io/no-op"
+I0328 22:38:37.533475   29191 docker_service.go:263] "Docker Info" dockerInfo=&{ID:JY2E:DPKB:MB63:ZQLB:3HGX:C5OU:4OWJ:R4AI:CQEK:YM7P:DP7P:3J7V Containers:1 ContainersRunning:0 ContainersPaused:0 ContainersStopped:1 Images:24 Driver:overlay2 DriverStatus:[[Backing Filesystem extfs] [Supports d_type true] [Native Overlay Diff true] [userxattr false]] SystemStatus:[] Plugins:{Volume:[local] Network:[bridge host ipvlan macvlan null overlay] Authorization:[] Log:[awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog]} MemoryLimit:true SwapLimit:false KernelMemory:true KernelMemoryTCP:true CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true PidsLimit:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6tables:true Debug:false NFd:22 OomKillDisable:true NGoroutines:33 SystemTime:2022-03-28T22:38:37.52576464+08:00 LoggingDriver:json-file CgroupDriver:cgroupfs CgroupVersion:1 NEventsListener:0 KernelVersion:4.15.0-121-generic OperatingSystem:Ubuntu 18.04.5 LTS OSVersion:18.04 OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:0xc0008110a0 NCPU:2 MemTotal:4136067072 GenericResources:[] DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:ke1 Labels:[] ExperimentalBuild:false ServerVersion:20.10.7 ClusterStore: ClusterAdvertise: Runtimes:map[io.containerd.runc.v2:{Path:runc Args:[] Shim:<nil>} io.containerd.runtime.v1.linux:{Path:runc Args:[] Shim:<nil>} runc:{Path:runc Args:[] Shim:<nil>}] DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:[] Nodes:0 Managers:0 Cluster:<nil> Warnings:[]} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:d71fcd7d8303cbf684402823e425e9dd2e99285d Expected:d71fcd7d8303cbf684402823e425e9dd2e99285d} RuncCommit:{ID:b9ee9c6314599f1b4a7f497e1f1f856fe433d3b7 Expected:b9ee9c6314599f1b4a7f497e1f1f856fe433d3b7} InitCommit:{ID:de40ad0 Expected:de40ad0} SecurityOptions:[name=apparmor name=seccomp,profile=default] ProductLicense: DefaultAddressPools:[] Warnings:[WARNING: No swap limit support]}
+I0328 22:38:37.533497   29191 docker_service.go:278] "Setting cgroupDriver" cgroupDriver="cgroupfs"
+I0328 22:38:37.533539   29191 edged.go:705] RemoteRuntimeEndpoint: "unix:///var/run/dockershim.sock", remoteImageEndpoint: "unix:///var/run/dockershim.sock"
+I0328 22:38:37.533545   29191 edged.go:708] Starting the GRPC server for the docker CRI shim.
+I0328 22:38:37.554598   29191 state_mem.go:36] "Initialized new in-memory state store"
+I0328 22:38:37.617000   29191 kuberuntime_manager.go:245] "Container runtime initialized" containerRuntime="docker" version="20.10.7" apiVersion="1.41.0"
+I0328 22:38:37.617044   29191 edged.go:589] --cgroups-per-qos enabled, but --cgroup-root was not specified.  defaulting to /
+I0328 22:38:37.624981   29191 container_manager_linux.go:280] "Container manager verified user specified cgroup-root exists" cgroupRoot=[]
+I0328 22:38:37.625077   29191 container_manager_linux.go:285] "Creating Container Manager object based on Node Config" nodeConfig={RuntimeCgroupsName: SystemCgroupsName: KubeletCgroupsName: ContainerRuntime:docker CgroupsPerQOS:true CgroupRoot:/ CgroupDriver:cgroupfs KubeletRootDir:/var/lib/edged ProtectKernelDefaults:false NodeAllocatableConfig:{KubeReservedCgroupName: SystemReservedCgroupName: ReservedSystemCPUs: EnforceNodeAllocatable:map[] KubeReserved:map[] SystemReserved:map[] HardEvictionThresholds:[]} QOSReserved:map[] ExperimentalCPUManagerPolicy:none ExperimentalCPUManagerPolicyOptions:map[] ExperimentalTopologyManagerScope:container ExperimentalCPUManagerReconcilePeriod:0s ExperimentalMemoryManagerPolicy:None ExperimentalMemoryManagerReservedMemory:[] ExperimentalPodPidsLimit:0 EnforceCPULimits:false CPUCFSQuotaPeriod:0s ExperimentalTopologyManagerPolicy:none}
+I0328 22:38:37.625101   29191 topology_manager.go:133] "Creating topology manager with policy per scope" topologyPolicyName="none" topologyScopeName="container"
+I0328 22:38:37.625110   29191 container_manager_linux.go:320] "Creating device plugin manager" devicePluginEnabled=false
+I0328 22:38:37.625120   29191 state_mem.go:36] "Initialized new in-memory state store"
+I0328 22:38:37.625198   29191 module.go:52] Module edged registered successfully
+I0328 22:38:37.625207   29191 module.go:52] Module websocket registered successfully
+I0328 22:38:37.625212   29191 module.go:52] Module eventbus registered successfully
+I0328 22:38:37.625237   29191 metamanager.go:47] Begin to register metaManager db model
+I0328 22:38:37.625278   29191 module.go:52] Module metaManager registered successfully
+W0328 22:38:37.625283   29191 module.go:55] Module servicebus is disabled, do not register
+W0328 22:38:37.625294   29191 module.go:55] Module edgestream is disabled, do not register
+W0328 22:38:37.625298   29191 module.go:55] Module testManager is disabled, do not register
 table `device` already exists, skip
 table `device_attr` already exists, skip
 table `device_twin` already exists, skip
@@ -36,89 +36,85 @@ table `sub_topics` already exists, skip
 table `meta` already exists, skip
 table `meta_v2` already exists, skip
 table `target_urls` already exists, skip
-I0327 15:00:54.887929   31188 core.go:46] starting module twin
-I0327 15:00:54.887952   31188 core.go:46] starting module edged
-I0327 15:00:54.887974   31188 core.go:46] starting module websocket
-I0327 15:00:54.887977   31188 process.go:114] Begin to sync sqlite 
-I0327 15:00:54.887994   31188 core.go:46] starting module eventbus
-I0327 15:00:54.888013   31188 core.go:46] starting module metaManager
-I0327 15:00:54.888877   31188 common.go:97] start connect to mqtt server with client id: hub-client-sub-1648364454
-I0327 15:00:54.888891   31188 common.go:99] client hub-client-sub-1648364454 isconnected: false
-I0327 15:00:54.889220   31188 client.go:157] finish hub-client sub
-I0327 15:00:54.889239   31188 common.go:97] start connect to mqtt server with client id: hub-client-pub-1648364454
-I0327 15:00:54.889246   31188 common.go:99] client hub-client-pub-1648364454 isconnected: false
-I0327 15:00:54.889456   31188 client.go:95] edge-hub-cli subscribe topic to $hw/events/upload/#
-I0327 15:00:54.889543   31188 client.go:176] finish hub-client pub
-I0327 15:00:54.889550   31188 eventbus.go:69] Init Sub And Pub Client for external mqtt broker tcp://127.0.0.1:1883 successfully
-I0327 15:00:54.889563   31188 client.go:95] edge-hub-cli subscribe topic to $hw/events/device/+/state/update
-I0327 15:00:54.889626   31188 client.go:95] edge-hub-cli subscribe topic to $hw/events/device/+/twin/+
-I0327 15:00:54.889670   31188 client.go:95] edge-hub-cli subscribe topic to $hw/events/node/+/membership/get
-I0327 15:00:54.889711   31188 client.go:95] edge-hub-cli subscribe topic to SYS/dis/upload_records
-I0327 15:00:54.889757   31188 client.go:95] edge-hub-cli subscribe topic to +/user/#
-I0327 15:00:54.889843   31188 client.go:103] list edge-hub-cli-topics status, no record, skip sync
-I0327 15:00:54.889855   31188 edged.go:303] Starting edged...
-E0327 15:00:54.889906   31188 csi_plugin.go:224] kubernetes.io/csi: CSIDriverLister not found on KubeletVolumeHost
-I0327 15:00:54.889928   31188 fs_resource_analyzer.go:67] "Starting FS ResourceAnalyzer"
-I0327 15:00:54.902875   31188 certmanager.go:161] Certificate rotation is enabled.
-I0327 15:00:54.902902   31188 websocket.go:51] Websocket start to connect Access
-I0327 15:00:54.921098   31188 ws.go:45] dial wss://192.168.88.6:30000/e632aba927ea4ac2b575ec1603d56f10/ke1/events successfully
-I0327 15:00:54.921134   31188 websocket.go:93] Websocket connect to cloud access successful
-I0327 15:00:54.921349   31188 process.go:316] node connection event occur: cloud_connected
-W0327 15:00:54.921361   31188 eventbus.go:154] Action not found
-I0327 15:00:54.921365   31188 process.go:316] node connection event occur: cloud_connected
-I0327 15:00:54.921373   31188 process.go:283] DeviceTwin receive msg
-I0327 15:00:54.921385   31188 process.go:66] Send msg to the CommModule module in twin
-I0327 15:00:54.970236   31188 cpu_manager.go:209] "Starting CPU manager" policy="none"
-I0327 15:00:54.970256   31188 cpu_manager.go:210] "Reconciling" reconcilePeriod="0s"
-I0327 15:00:54.970267   31188 state_mem.go:36] "Initialized new in-memory state store"
-I0327 15:00:54.970379   31188 state_mem.go:88] "Updated default CPUSet" cpuSet=""
-I0327 15:00:54.970389   31188 state_mem.go:96] "Updated CPUSet assignments" assignments=map[]
-I0327 15:00:54.970395   31188 policy_none.go:49] "None policy: Start"
-I0327 15:00:54.970856   31188 memory_manager.go:168] "Starting memorymanager" policy="None"
-I0327 15:00:54.970874   31188 state_mem.go:35] "Initializing new in-memory state store"
-I0327 15:00:54.970976   31188 state_mem.go:75] "Updated machine memory state"
-I0327 15:00:54.971621   31188 record.go:19] Normal NodeAllocatableEnforced Updated Node Allocatable limit across pods
-I0327 15:00:54.971749   31188 volume_manager.go:291] "Starting Kubelet Volume Manager"
-I0327 15:00:54.971912   31188 desired_state_of_world_populator.go:146] "Desired state populator starts to run"
-I0327 15:00:54.982925   31188 edged_status.go:407] Attempting to register node ke1
-E0327 15:00:54.982967   31188 imitator.go:224] failed to unmarshal message content to unstructured obj: Object 'Kind' is missing in '{"metadata":{"name":"ke1","creationTimestamp":null,"labels":{"kubernetes.io/arch":"amd64","kubernetes.io/hostname":"ke1","kubernetes.io/os":"linux","node-role.kubernetes.io/agent":"","node-role.kubernetes.io/edge":""}},"spec":{},"status":{"daemonEndpoints":{"kubeletEndpoint":{"Port":0}},"nodeInfo":{"machineID":"","systemUUID":"","bootID":"","kernelVersion":"","osImage":"","containerRuntimeVersion":"","kubeletVersion":"","kubeProxyVersion":"","operatingSystem":"","architecture":""}}}'
-I0327 15:00:54.985659   31188 status_manager.go:52] Starting to sync pod status with apiserver
-I0327 15:00:54.985672   31188 edged.go:947] start pod addition queue work 0
-I0327 15:00:54.985677   31188 edged.go:947] start pod addition queue work 1
-I0327 15:00:54.985680   31188 edged.go:947] start pod addition queue work 2
-I0327 15:00:54.985683   31188 edged.go:947] start pod addition queue work 3
-I0327 15:00:54.985687   31188 edged.go:947] start pod addition queue work 4
-I0327 15:00:54.985703   31188 edged.go:369] starting plugin manager
-I0327 15:00:54.985757   31188 server.go:36] starting to listen read-only on 127.0.0.1:10350
-I0327 15:00:54.986019   31188 plugin_manager.go:114] "Starting Kubelet Plugin Manager"
-I0327 15:00:54.986256   31188 server.go:409] "Adding debug handlers to kubelet server"
-I0327 15:00:54.990331   31188 edged_status.go:426] Successfully registered node ke1
-I0327 15:00:54.994578   31188 cpu_manager.go:209] "Starting CPU manager" policy="none"
-I0327 15:00:54.994591   31188 cpu_manager.go:210] "Reconciling" reconcilePeriod="1s"
-I0327 15:00:54.994602   31188 state_mem.go:36] "Initialized new in-memory state store"
-I0327 15:00:54.994660   31188 state_mem.go:88] "Updated default CPUSet" cpuSet=""
-I0327 15:00:54.994667   31188 state_mem.go:96] "Updated CPUSet assignments" assignments=map[]
-I0327 15:00:54.994679   31188 policy_none.go:49] "None policy: Start"
-I0327 15:00:54.994698   31188 edged.go:380] starting syncPod
-I0327 15:01:04.996153   31188 edged.go:1130] result content is []
-I0327 15:01:05.115061   31188 reconciler.go:157] "Reconciler: start to sync state"
-I0327 15:01:26.142177   31188 core.go:56] Get os signal terminated
-I0327 15:01:26.142205   31188 core.go:62] Cleanup module websocket
-W0327 15:01:26.142223   31188 process.go:313] Stop DeviceTwin ModulesHealth load loop
-W0327 15:01:26.142223   31188 metamanager.go:79] MetaManager stop
-I0327 15:01:26.142232   31188 dtcontext.go:66] CommModule stop
-I0327 15:01:26.142236   31188 dtcontext.go:66] MemModule stop
-I0327 15:01:26.142241   31188 dtcontext.go:66] TwinModule stop
-I0327 15:01:26.142244   31188 dtcontext.go:66] DeviceModule stop
-I0327 15:01:26.162762   31188 core.go:62] Cleanup module eventbus
-W0327 15:01:26.162854   31188 process.go:133] EdgeHub RouteToCloud stop
-I0327 15:01:26.183174   31188 core.go:62] Cleanup module metaManager
-W0327 15:01:26.183204   31188 eventbus.go:154] Action not found
-W0327 15:01:26.183211   31188 eventbus.go:104] EventBus PubCloudMsg To Edge stop
-I0327 15:01:26.203516   31188 core.go:62] Cleanup module twin
-E0327 15:01:26.203545   31188 process.go:457] metamanager not supported operation: 
-W0327 15:01:26.203552   31188 process.go:466] MetaManager main loop stop
-I0327 15:01:26.223701   31188 core.go:62] Cleanup module edged
-I0327 15:01:26.223731   31188 process.go:283] DeviceTwin receive msg
-W0327 15:01:26.223740   31188 process.go:286] distributeMsg failed: not found action
-W0327 15:01:26.223752   31188 process.go:278] Stop DeviceTwin ModulesContext Receive loop
+I0328 22:38:37.626080   29191 core.go:46] starting module websocket
+I0328 22:38:37.626126   29191 core.go:46] starting module eventbus
+I0328 22:38:37.626146   29191 core.go:46] starting module metaManager
+I0328 22:38:37.626169   29191 core.go:46] starting module twin
+I0328 22:38:37.626198   29191 core.go:46] starting module edged
+I0328 22:38:37.631113   29191 common.go:97] start connect to mqtt server with client id: hub-client-sub-1648478317
+I0328 22:38:37.631133   29191 common.go:99] client hub-client-sub-1648478317 isconnected: false
+I0328 22:38:37.631375   29191 process.go:114] Begin to sync sqlite 
+I0328 22:38:37.631534   29191 edged.go:303] Starting edged...
+E0328 22:38:37.631581   29191 csi_plugin.go:224] kubernetes.io/csi: CSIDriverLister not found on KubeletVolumeHost
+I0328 22:38:37.631603   29191 fs_resource_analyzer.go:67] "Starting FS ResourceAnalyzer"
+I0328 22:38:37.632905   29191 client.go:157] finish hub-client sub
+I0328 22:38:37.632925   29191 common.go:97] start connect to mqtt server with client id: hub-client-pub-1648478317
+I0328 22:38:37.632931   29191 common.go:99] client hub-client-pub-1648478317 isconnected: false
+I0328 22:38:37.634129   29191 client.go:95] edge-hub-cli subscribe topic to $hw/events/upload/#
+I0328 22:38:37.634223   29191 client.go:95] edge-hub-cli subscribe topic to $hw/events/device/+/state/update
+I0328 22:38:37.634267   29191 client.go:176] finish hub-client pub
+I0328 22:38:37.634274   29191 eventbus.go:69] Init Sub And Pub Client for external mqtt broker tcp://127.0.0.1:1883 successfully
+I0328 22:38:37.634301   29191 client.go:95] edge-hub-cli subscribe topic to $hw/events/device/+/twin/+
+I0328 22:38:37.634348   29191 client.go:95] edge-hub-cli subscribe topic to $hw/events/node/+/membership/get
+I0328 22:38:37.634423   29191 client.go:95] edge-hub-cli subscribe topic to SYS/dis/upload_records
+I0328 22:38:37.634475   29191 client.go:95] edge-hub-cli subscribe topic to +/user/#
+I0328 22:38:37.634571   29191 client.go:103] list edge-hub-cli-topics status, no record, skip sync
+I0328 22:38:37.637631   29191 certmanager.go:161] Certificate rotation is enabled.
+I0328 22:38:37.637653   29191 websocket.go:51] Websocket start to connect Access
+I0328 22:38:37.646774   29191 ws.go:45] dial wss://192.168.88.6:30000/e632aba927ea4ac2b575ec1603d56f10/ke1/events successfully
+I0328 22:38:37.646818   29191 websocket.go:93] Websocket connect to cloud access successful
+I0328 22:38:37.646899   29191 process.go:316] node connection event occur: cloud_connected
+I0328 22:38:37.646939   29191 process.go:316] node connection event occur: cloud_connected
+I0328 22:38:37.646947   29191 process.go:283] DeviceTwin receive msg
+I0328 22:38:37.646961   29191 process.go:66] Send msg to the CommModule module in twin
+W0328 22:38:37.646991   29191 eventbus.go:154] Action not found
+I0328 22:38:37.715140   29191 cpu_manager.go:209] "Starting CPU manager" policy="none"
+I0328 22:38:37.715161   29191 cpu_manager.go:210] "Reconciling" reconcilePeriod="0s"
+I0328 22:38:37.715175   29191 state_mem.go:36] "Initialized new in-memory state store"
+I0328 22:38:37.715308   29191 state_mem.go:88] "Updated default CPUSet" cpuSet=""
+I0328 22:38:37.715319   29191 state_mem.go:96] "Updated CPUSet assignments" assignments=map[]
+I0328 22:38:37.715326   29191 policy_none.go:49] "None policy: Start"
+I0328 22:38:37.716006   29191 memory_manager.go:168] "Starting memorymanager" policy="None"
+I0328 22:38:37.716028   29191 state_mem.go:35] "Initializing new in-memory state store"
+I0328 22:38:37.716129   29191 state_mem.go:75] "Updated machine memory state"
+I0328 22:38:37.716828   29191 record.go:19] Normal NodeAllocatableEnforced Updated Node Allocatable limit across pods
+I0328 22:38:37.716960   29191 volume_manager.go:291] "Starting Kubelet Volume Manager"
+I0328 22:38:37.717118   29191 desired_state_of_world_populator.go:146] "Desired state populator starts to run"
+E0328 22:38:37.727167   29191 imitator.go:224] failed to unmarshal message content to unstructured obj: Object 'Kind' is missing in '{"metadata":{"name":"ke1","creationTimestamp":null,"labels":{"kubernetes.io/arch":"amd64","kubernetes.io/hostname":"ke1","kubernetes.io/os":"linux","node-role.kubernetes.io/agent":"","node-role.kubernetes.io/edge":""}},"spec":{},"status":{"daemonEndpoints":{"kubeletEndpoint":{"Port":0}},"nodeInfo":{"machineID":"","systemUUID":"","bootID":"","kernelVersion":"","osImage":"","containerRuntimeVersion":"","kubeletVersion":"","kubeProxyVersion":"","operatingSystem":"","architecture":""}}}'
+I0328 22:38:37.729359   29191 edged_status.go:407] Attempting to register node ke1
+I0328 22:38:37.730149   29191 status_manager.go:52] Starting to sync pod status with apiserver
+I0328 22:38:37.730159   29191 edged.go:947] start pod addition queue work 0
+I0328 22:38:37.730163   29191 edged.go:947] start pod addition queue work 1
+I0328 22:38:37.730166   29191 edged.go:947] start pod addition queue work 2
+I0328 22:38:37.730170   29191 edged.go:947] start pod addition queue work 3
+I0328 22:38:37.730173   29191 edged.go:947] start pod addition queue work 4
+I0328 22:38:37.730192   29191 edged.go:369] starting plugin manager
+I0328 22:38:37.730242   29191 server.go:36] starting to listen read-only on 127.0.0.1:10350
+I0328 22:38:37.730529   29191 plugin_manager.go:114] "Starting Kubelet Plugin Manager"
+I0328 22:38:37.730795   29191 server.go:409] "Adding debug handlers to kubelet server"
+I0328 22:38:37.736251   29191 edged_status.go:426] Successfully registered node ke1
+I0328 22:38:37.741331   29191 cpu_manager.go:209] "Starting CPU manager" policy="none"
+I0328 22:38:37.741344   29191 cpu_manager.go:210] "Reconciling" reconcilePeriod="1s"
+I0328 22:38:37.741354   29191 state_mem.go:36] "Initialized new in-memory state store"
+I0328 22:38:37.741414   29191 state_mem.go:88] "Updated default CPUSet" cpuSet=""
+I0328 22:38:37.741422   29191 state_mem.go:96] "Updated CPUSet assignments" assignments=map[]
+I0328 22:38:37.741434   29191 policy_none.go:49] "None policy: Start"
+I0328 22:38:37.741454   29191 edged.go:380] starting syncPod
+I0328 22:38:40.488056   29191 core.go:56] Get os signal terminated
+I0328 22:38:40.488084   29191 core.go:62] Cleanup module twin
+W0328 22:38:40.488117   29191 process.go:313] Stop DeviceTwin ModulesHealth load loop
+I0328 22:38:40.488129   29191 dtcontext.go:66] TwinModule stop
+W0328 22:38:40.488140   29191 metamanager.go:79] MetaManager stop
+I0328 22:38:40.488149   29191 dtcontext.go:66] DeviceModule stop
+I0328 22:38:40.488156   29191 dtcontext.go:66] CommModule stop
+I0328 22:38:40.488164   29191 dtcontext.go:66] MemModule stop
+I0328 22:38:40.508337   29191 core.go:62] Cleanup module edged
+I0328 22:38:40.508368   29191 process.go:283] DeviceTwin receive msg
+W0328 22:38:40.508374   29191 process.go:286] distributeMsg failed: not found action
+W0328 22:38:40.508386   29191 process.go:278] Stop DeviceTwin ModulesContext Receive loop
+I0328 22:38:40.528681   29191 core.go:62] Cleanup module websocket
+I0328 22:38:40.548842   29191 core.go:62] Cleanup module eventbus
+W0328 22:38:40.548981   29191 process.go:133] EdgeHub RouteToCloud stop
+I0328 22:38:40.569152   29191 core.go:62] Cleanup module metaManager
+W0328 22:38:40.569199   29191 eventbus.go:154] Action not found
+W0328 22:38:40.569212   29191 eventbus.go:104] EventBus PubCloudMsg To Edge stop
