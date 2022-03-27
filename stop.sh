@@ -7,6 +7,7 @@ CONFIG_PATH=/etc/kubeedge/upgrade/${KUBEEDGE_VERSION}/config/edgecore.yaml
 DEFAULT_CONFIG_PATH=/etc/kubeedge/config/edgecore.yaml
 
 health=$(curl -s http://localhost:10350/healthz)
+echo $health
 if [[ "$health" == "ok" ]]; then
 	ln -srf ${BIN_PATH} ${DEFAULT_BIN_PATH}
 	ln -srf ${CONFIG_PATH} ${DEFAULT_CONFIG_PATH}

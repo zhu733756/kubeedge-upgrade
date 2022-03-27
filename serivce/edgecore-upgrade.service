@@ -6,7 +6,7 @@ StartLimitBurst=3
 [Service]
 Type=forking
 ExecStart=/bin/bash /etc/kubeedge/upgrade/start.sh
-ExecStopPost=/bin/bash /etc/kubeedge/upgrade/stop.sh
+ExecStop=/bin/bash /etc/kubeedge/upgrade/stop.sh
 RestartSec=10
 TimeoutSec=20
 Restart=always
